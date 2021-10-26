@@ -23,13 +23,13 @@ class searcher:
             for line in file:
                 line = line.split(" ")
                 img_list = [line[1]] + [float(feature) for feature in line[2:]]
-                self.__norm_data[line[1]] = img_list
+                self.__norm_data[line[0]] = img_list
 
         with open("unnorm.txt", "r") as file:
             for line in file:
                 line = line.split(" ")
                 img_list = [line[1]] + [float(feature) for feature in line[2:]]
-                self.__unnorm_data[line[1]] = img_list
+                self.__unnorm_data[line[0]] = img_list
 
     def calcSimilarity(self, img1_name: str, img2_name: str, func: typing.Callable) -> float:
         pass
