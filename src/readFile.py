@@ -14,8 +14,6 @@ path_unnorm = os.path.abspath(os.path.join(
 #  data_XX[][1]→類別         #
 #  data_XX[][2:223]→特徵值   #
 ##############################
-data_norm = []
-data_unnorm = []
 
 
 def readFeature(path):
@@ -29,68 +27,70 @@ def readFeature(path):
     return data
 
 
+def distance(num, data, c):
+    d = []
+
+    for i in range(10000):
+        if i == num:
+            d.append(0)
+            continue
+        if c == 0:  # 尤拉 公式
+            d.append(searcher.euclidean_distance(
+                data[num][2:223], data[i][2:223]))
+        elif c == 1:  # cosine 公式
+            d.append(searcher.consine_distance(
+                data[num][2:223], data[i][2:223]))
+        elif c == 2:  # pcc公式
+            d.append(searcher.pcc_distance(
+                data[num][2:223], data[i][2:223]))
+    print(d)
+    return d
+
+
+def searching(caculate, value):
+    idx = []
+    for i in range(10):
+        g = 0
+        if caculate == 0:
+            tmp = min(value)
+            g = 10
+        else:
+            tmp = max(value)
+            g = 0
+        idx.append(value.index(tmp))
+        value[idx[i]] = g  # 已儲存的值就不要ㄌ
+
+    return idx
+
+
 def main():
 
     # 隨便選一個編號，顯示所有類別的第pic張圖片，顯示在前端上 (rand_pic+200*k)
     rand_pic = random.randint(0, 199)
     print("rand: ", rand_pic)
-    k = random.randint(0, 49)   # 顯示的10張中，被選擇的那一張(從前端接)
+    k = random.randint(0, 49)   # 顯示的50張中，被選擇的那一張(從前端接)
     print("idx: ", k*200 + rand_pic)
     caculate = 1  # 計算方式
     flag_norm = True  # 是否正規化
     value = []  # 所有距離
-    max_idx = []  # 最大的10個距離的index
+    similar_idx = []  # 最大的10個距離的index
 
     if flag_norm:
         data = readFeature(path_norm)
     else:
         data = readFeature(path_unnorm)
 
-    for i in range(10000):
-        if i == (k*200 + rand_pic):
-            value.append(0)
-            continue
-        if caculate == 0:  # 尤拉 公式
-            value.append(searcher.euclidean_distance(
-                data[(k*200 + rand_pic)][2:223], data[i][2:223]))
-        elif caculate == 1:  # cosine 公式
-            value.append(searcher.consine_distance(
-                data[(k*200 + rand_pic)][2:223], data[i][2:223]))
-        elif caculate == 2:  # pcc公式
-            value.append(searcher.pcc_distance(
-                data[(k*200 + rand_pic)][2:223], data[i][2:223]))
-    print(value)
-    for i in range(10):
-        tmp = max(value)
-        max_idx.append(value.index(tmp))
-        # print("tmp = ", tmp, ", idx = ", value.index(tmp))
-        value[max_idx[i]] = -5  # 已儲存的值就不要ㄌ
+    value = distance(k*200+rand_pic, data, caculate)
+
+    similar_idx = searching(caculate, value)
     print("original picture: ", data[(k*200 + rand_pic)][0])
-    print(max_idx)
+    print(similar_idx)
     correct = 0
     for i in range(10):
-        print(data[max_idx[i]][0])
-        if(data[max_idx[i]][1] == data[k*200+rand_pic][1]):
+        print(data[similar_idx[i]][0])
+        if(data[similar_idx[i]][1] == data[k*200+rand_pic][1]):
             correct += 1
-    print("correct = ", correct*10, "%")
-    '''
-    data_norm = readFeature(path_norm)
-    data_unnorm = readFeature(path_unnorm)
-    '''
-
-    '''
-    print("file name: ", data_norm[9999][0], "\nfile class: ",
-          data_norm[9999][1], "\nfeatures: ", data_norm[9999][2:223])
-    '''
-    '''
-    data = readFeature(path_norm)
-    test1 = searcher.euclidean_distance(data[1][2:223], data[2][2:223])
-    print(test1)
-    test2 = searcher.consine_distance(data[1][2:223], data[2][2:223])
-    print(test2)
-    test3 = searcher.pcc_distance(data[1][2:223], data[2][2:223])
-    print(test3)
-    '''
+    print("\ncorrect = ", correct*10, "%")
 
 
 if __name__ == '__main__':
