@@ -26,8 +26,8 @@ def consine_distance(vec1, vec2):
 
     for feature_index in range (feature_num):
         numerator = float(vec1[feature_index])*float(vec2[feature_index]) + numerator
-        A = vec1[feature_index]**2 + A #sigma (vec1)**2
-        B = vec2[feature_index]**2 + B #sigma (vec2)**2
+        A = float(vec1[feature_index])**2 + A #sigma (vec1)**2
+        B = float(vec2[feature_index])**2 + B #sigma (vec2)**2
     denominator = (A**0.5) * (B**0.5)
     consine_similarity = float(numerator/denominator) #最後cosine距離
 
