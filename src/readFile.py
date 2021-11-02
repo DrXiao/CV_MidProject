@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import searcher
+from search import *
 import random
 
 # 取得路徑
@@ -35,13 +35,13 @@ def distance(num, data, c):
             d.append(0)
             continue
         if c == 0:  # 尤拉 公式
-            d.append(searcher.euclidean_distance(
+            d.append(euclidean_distance(
                 data[num][2:223], data[i][2:223]))
         elif c == 1:  # cosine 公式
-            d.append(searcher.consine_distance(
+            d.append(consine_distance(
                 data[num][2:223], data[i][2:223]))
         elif c == 2:  # pcc公式
-            d.append(searcher.pcc_distance(
+            d.append(pcc_distance(
                 data[num][2:223], data[i][2:223]))
     print(d)
     return d
