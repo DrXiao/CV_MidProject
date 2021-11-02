@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <meta charset = "utf-8">
+        <title> home </title>
+    </head>
+    <body>
+        <nav class = "navbar navbar-dark bg-dark" style="padding: 0.5rem 1rem; background-color: #343a40 !important;" >
+            <a class = "navbar-brank" href="./home.html" style="color: #fff; text-decoration:none;;">
+                &nbsp <strong style="font-size: larger;">CV Midterm Project</strong>
+            </a>           
+        </nav>
+    
+        <!-- 中間區塊 -->
+        <div class = "container" style = " padding: 20px 20px 20px;">
+            <h1 style="margin-top: 1rem;"><strong>影像搜尋</strong></h1>
+            <div style=" margin-top: 1rem;">
+                <!-- card1 -->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 1</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- card2 -->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 2</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>    
+                <!-- card3，排版用-->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 3</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>       
+                <!-- card4，排版用-->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 4</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>  
+                <!-- card5，排版用-->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 5</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>     
+                <!-- card6，排版用-->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 6</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- card7，排版用-->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 7</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- card8，排版用-->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 8</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- card9，排版用-->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 9</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- card10，排版用-->
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class = "card-body">
+                        <h5 class = "card-title"># 10</h5> 
+                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>是否正規化?</span>
+                                <div class="text-truncate" style="color: #343a40;">
+                                    <input type="radio" id="r1" name="rr"/>
+                                    <label for="r1">Normalize</label><br>
+                                    <input type="radio" id="r2" name="rr"/>
+                                    <label for="r2">Unnormalize</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>選擇算法：</span>
+                                <div class="text-truncate">
+                                    <select id="timeschooser">
+                                        <option>Euclidean Distance</option>
+                                        <option>Cosine Similarity</option>
+                                        <option>PCC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-auto">
+                            <div>
+                                <a href = "./imgSearch.html"> <button type="submit" class="btn btn-secondary">開始搜尋</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
