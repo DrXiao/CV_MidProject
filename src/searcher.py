@@ -21,11 +21,16 @@ def consine_distance(vec1, vec2):
     feature_num = len(vec1)
     numerator = 0 # 分子
     denominator = 0 # 分母
+    A = 0
+    B = 0
 
     for feature_index in range (feature_num):
         numerator = float(vec1[feature_index])*float(vec2[feature_index]) + numerator
-        denominator = abs(float(vec1[feature_index])*float(vec2[feature_index])) + denominator
+        A = vec1[feature_index]**2 + A #sigma (vec1)**2
+        B = vec2[feature_index]**2 + B #sigma (vec2)**2
+    denominator = (A**0.5) * (B**0.5)
     consine_similarity = float(numerator/denominator) #最後cosine距離
+
 
     return consine_similarity
 
@@ -42,10 +47,14 @@ def pcc_distance(vec1, vec2):
     
     numerator = 0 # 分子
     denominator = 0 # 分母
+    part1 = 0 #sigma (vec1 - average1)^2
+    part2 = 0 #sigma (vec2 - average2)^2
 
     for feature_index in range(feature_num):
         numerator = numerator + (float(vec1[feature_index]) - average1)*(float(vec2[feature_index])-average2)
-        denominator = denominator + (((float(vec1[feature_index]) - average1)**2)**0.5) * (((float(vec2[feature_index]) - average2)**2)**0.5)
+        part1 = (float(vec1[feature_index]) - average1)**2 + part1
+        part2 = (float(vec2[feature_index])-average2)**2 + part2
+    denominator = (part1 **0.5)*(part2)**0.5
     pcc_similarity = float(numerator / denominator) #最後求得的PCC距離
 
     return pcc_similarity
