@@ -51,12 +51,12 @@ def search():
     accuracy = 0.0
     for img_idx in similar_img_idx:
         with open(pic_path / files[img_idx][1] / files[img_idx][0], "rb") as file:
-            similar_imgs.append([files[img_idx][1], b64encode(file.read()).decode("utf-8")])
+            similar_imgs.append([files[img_idx][0], b64encode(file.read()).decode("utf-8")])
         if files[img_idx][1] == img_info["img_class"]:
             accuracy += 1
     selected_img = None
     with open(pic_path / files[selected_img_idx][1] / files[selected_img_idx][0], "rb") as file:
-        selected_img = [files[selected_img_idx][1], b64encode(file.read()).decode("utf-8")]
+        selected_img = [files[selected_img_idx][0], b64encode(file.read()).decode("utf-8")]
     return render_template("imgSearch.html", selected_img=selected_img, similar_imgs=similar_imgs, accuracy=accuracy)
 
 
