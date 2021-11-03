@@ -27,10 +27,37 @@ def home():
 
 @app.route("/search")
 def search():
-    img = request.values
-    print(img)
-    print(img["img_filename"], img["img_class"])
-    return render_template("imgSearch.html")
+    img_info = request.values
+    methods = {
+        "Euclidean Distance": 0,
+        "Cosine Similarity": 1,
+        "PCC": 2
+    }
+    """
+        "norm":     Normalize / Unnormalize
+        "method":   Euclidean Distance / Consine Similarity / PCC
+        "img_filename": (filename of the img)
+        "img_class": (the class of the img)
+    """
+    for selected_img_idx in range(10000):
+        if files[selected_img_idx][0] == img_info["img_filename"]:
+            break
+    if img_info["norm"] == "Normalize":
+        all_distance = distance(selected_img_idx, norm_features, methods[img_info["method"]])
+    else:
+        all_distance = distance(selected_img_idx, unnorm_features, methods[img_info["method"]])
+    similar_img_idx = searching(methods[img_info["method"]], all_distance)
+    similar_imgs = []
+    accuracy = 0.0
+    for img_idx in similar_img_idx:
+        with open(pic_path / files[img_idx][1] / files[img_idx][0], "rb") as file:
+            similar_imgs.append([files[img_idx][1], b64encode(file.read()).decode("utf-8")])
+        if files[img_idx][1] == img_info["img_class"]:
+            accuracy += 1
+    selected_img = None
+    with open(pic_path / files[selected_img_idx][1] / files[selected_img_idx][0], "rb") as file:
+        selected_img = [files[selected_img_idx][1], b64encode(file.read()).decode("utf-8")]
+    return render_template("imgSearch.html", selected_img=selected_img, similar_imgs=similar_imgs, accuracy=accuracy)
 
 
 if __name__ == "__main__":

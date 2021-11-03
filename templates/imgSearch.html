@@ -1,107 +1,54 @@
 <!doctype html>
 <html>
-    <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-        <meta charset = "utf-8">
-        <title> imgSearch </title>
-    </head>
-    <body>
-        <nav class = "navbar navbar-dark bg-dark" style="padding: 0.5rem 1rem; background-color: #343a40 !important;" >
-            <a class = "navbar-brank" href="./home.html" style="color: #fff; text-decoration:none;;">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title> imgSearch </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark" style="padding: 0.5rem 1rem; background-color: #343a40 !important;">
+        <a class="navbar-brank" href="./home.html" style="color: #fff; text-decoration:none;;">
                 &nbsp <strong style="font-size: larger;">CV Midterm Project</strong>
-            </a>           
-        </nav>
-    
-        <!-- 中間區塊 -->
-        <div class = "container" style = " padding: 20px 20px 10px;">
-            <h1 style="margin-top: 1rem;"><strong>影像搜尋</strong></h1>
-            <div style=" margin-top: 1rem;">
-                <!-- 選擇的card -->
-                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                    <div class = "card-body">
-                        <h5 class = "card-title">您選擇的圖片：</h5> 
-                        <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                    </div>
-                </div>
-                <div style=" margin-top: 2rem;">
-                    <h2><strong>搜尋結果</strong></h2>
-                    <!-- card1 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 1</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                    <!-- card2 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 2</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                    <!-- card3 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 3</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                    <!-- card4 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 4</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                    <!-- card5 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 5</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                    <!-- card6 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 6</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                    <!-- card7 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 7</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                    <!-- card8 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 8</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                    <!-- card9 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 9</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                    <!-- card10 -->
-                    <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
-                        <div class = "card-body">
-                            <h5 class = "card-title"># 10</h5> 
-                            <img src="/pic/AncestorDinoArt/AncestorDinoArt_001.jpg" class="card-img-top" width="100">
-                        </div>
-                    </div>
-                </div>
-                <div style="margin: 1em 0;">
-                    <!-- 這邊送出後看要不要把搜尋結果的正確率寫到.txt裡? -->
-                    <a href = "./home.html"> <button type="submit" class="btn btn-secondary">確認送出</button></a>
+            </a>
+    </nav>
+
+    <!-- 中間區塊 -->
+    <div class="container" style=" padding: 20px 20px 10px;">
+        <h1 style="margin-top: 1rem;"><strong>影像搜尋</strong></h1>
+        <div style=" margin-top: 1rem;">
+            <!-- 選擇的card -->
+            <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                <div class="card-body">
+                    <h5 class="card-title">您選擇的圖片：</h5>
+                    <h5>{{selected_img[0]}}</h5>
+                    <img src="data:;base64,{{selected_img[1]}}" class="card-img-top" width="100" height="150">
                 </div>
             </div>
+            <div style=" margin-top: 2rem;">
+                <h2><strong>搜尋結果</strong></h2>
+                <!-- card1 -->
+                {% for img_idx in range(10) %}
+                <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"># {{img_idx + 1}}</h5>
+                        <h5>{{similar_imgs[img_idx][0]}}</h5>
+                        <img src="data:;base64,{{similar_imgs[img_idx][1]}}" class="card-img-top" width="100" height="150">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div>
+                <h3>accuracy: {{ accuracy * 10 }}%</h3>
+            </div>
+            <div style="margin: 1em 0;">
+                <!-- 這邊送出後看要不要把搜尋結果的正確率寫到.txt裡? -->
+                <a href="/"> <button type="submit" class="btn btn-secondary">返回</button></a>
+            </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

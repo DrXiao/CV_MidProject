@@ -32,7 +32,10 @@ def distance(num, data, c):
 
     for i in range(10000):
         if i == num:
-            d.append(0)
+            if c == 0:
+                d.append(1E9)
+            else:
+                d.append(0)
             continue
         if c == 0:  # 尤拉 公式
             d.append(euclidean_distance(
@@ -43,7 +46,7 @@ def distance(num, data, c):
         elif c == 2:  # pcc公式
             d.append(pcc_distance(
                 data[num][2:223], data[i][2:223]))
-    print(d)
+    # print(d)
     return d
 
 
@@ -53,7 +56,7 @@ def searching(caculate, value):
         g = 0
         if caculate == 0:
             tmp = min(value)
-            g = 10
+            g = 1E9
         else:
             tmp = max(value)
             g = 0
