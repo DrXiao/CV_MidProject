@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from search import *
 import random
-
+filesize = 10000
 # 取得路徑
 path_norm = os.path.abspath(os.path.join(
     os.getcwd(), os.path.pardir)) + "//norm.txt"
@@ -30,7 +30,7 @@ def readFeature(path):
 def distance(num, data, c):
     d = []
 
-    for i in range(10000):
+    for i in range(filesize):
         if i == num:
             if c == 0:
                 d.append(1E9)
@@ -66,15 +66,7 @@ def searching(caculate, value):
     return idx
 
 
-def main():
-
-    # 隨便選一個編號，顯示所有類別的第pic張圖片，顯示在前端上 (rand_pic+200*k)
-    rand_pic = random.randint(0, 199)
-    print("rand: ", rand_pic)
-    k = random.randint(0, 49)   # 顯示的50張中，被選擇的那一張(從前端接)
-    print("idx: ", k*200 + rand_pic)
-    caculate = 1  # 計算方式
-    flag_norm = True  # 是否正規化
+def finding(pic_num, flag_norm, flag_dist):
     value = []  # 所有距離
     similar_idx = []  # 最大的10個距離的index
 
@@ -83,17 +75,52 @@ def main():
     else:
         data = readFeature(path_unnorm)
 
-    value = distance(k*200+rand_pic, data, caculate)
+    value = distance(pic_num, data, flag_dist)
 
-    similar_idx = searching(caculate, value)
-    print("original picture: ", data[(k*200 + rand_pic)][0])
-    print(similar_idx)
-    correct = 0
+    similar_idx = searching(flag_dist, value)
+    # print("original picture: ", data[pic_num][0])
+    # print(similar_idx)
+    accuracy = 0
     for i in range(10):
-        print(data[similar_idx[i]][0])
-        if(data[similar_idx[i]][1] == data[k*200+rand_pic][1]):
-            correct += 1
-    print("\ncorrect = ", correct*10, "%")
+        # print(data[similar_idx[i]][0])
+        if(data[similar_idx[i]][1] == data[pic_num][1]):
+            accuracy += 1
+    # print("\ncorrect = ", correct*10, "%")
+    return accuracy
+
+
+def main():
+
+    k = random.randint(0, 49)   # 選擇類別)
+    rand_pic = random.randint(0, 199)  # 選擇編號
+    # print("rand: ", rand_pic)
+    # print("idx: ", k*200 + rand_pic)
+
+    caculate = 1  # 計算方式
+    flag_norm = True  # 是否正規化
+    # accuracy = 0
+    # accuracy = finding(k*200 + rand_pic, flag_norm, caculate)
+
+    '''下面是用來測準確率ㄉ！'''
+    f = open("accurancy.txt", "w")
+    for k in range(2):      # 是否正規化
+        if k:
+            f.write("\n***normalize***\n")
+        else:
+            f.write("\n ***unnormalize***\n")
+        for i in range(3):              # 不同公式
+            accuracy = 0
+            for j in range(filesize):      # 跑10000張圖片
+                print("pic = ", j, ", caculate = ",
+                      i, "accuracy = ", accuracy)
+                accuracy += finding(j, k, i)
+            if i == 0:
+                str1 = "Eudience distance: " + str(accuracy/1000) + "\n"
+            elif i == 1:
+                str1 = "Cosine distance: " + str(accuracy/1000) + "\n"
+            else:
+                str1 = "PCC distance: " + str(accuracy/1000) + "\n"
+            f.write(str1)
 
 
 if __name__ == '__main__':
