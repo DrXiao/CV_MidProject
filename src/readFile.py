@@ -2,8 +2,6 @@ import os
 from pathlib import Path
 from search import *
 import random
-from numba import cuda
-
 filesize = 10000
 # 取得路徑
 path_norm = os.path.abspath(os.path.join(
