@@ -10,7 +10,7 @@
 
 <body>
     <nav class="navbar navbar-dark bg-dark" style="padding: 0.5rem 1rem; background-color: #343a40 !important;">
-        <a class="navbar-brank" href="./home.html" style="color: #fff; text-decoration:none;;">
+        <a class="navbar-brank" href="/" style="color: #fff; text-decoration:none;;">
                 &nbsp <strong style="font-size: larger;">CV Midterm Project</strong>
             </a>
     </nav>
@@ -24,7 +24,7 @@
             <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
                 <div class="card-body">
                     <h5 class="card-title"># {{ class_idx + 1}}</h5>
-                    <img src="data:;base64,{{ imgs[class_idx][2] | safe }}" class="card-img-top" width="100" height="150">
+                    <img src="data:;base64,{{ imgs[class_idx][2] }}" class="card-img-top" width="100" height="150">
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">

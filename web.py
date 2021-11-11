@@ -13,7 +13,7 @@ norm_features = readFeature("norm.txt")
 unnorm_features = readFeature("unnorm.txt")
 files = [ info[0:2] for info in norm_features]
 
-
+# Decorator 裝飾器 -> 給函式附加功能
 @app.route("/")
 def home():
     rand_pic = random.randint(0, 199)
@@ -22,7 +22,7 @@ def home():
         img_idx = rand_pic + class_idx * 200
         with open(pic_path / files[img_idx][1] / files[img_idx][0], "rb") as file:
             imgs.append([files[img_idx][0], files[img_idx][1], b64encode(file.read()).decode("utf-8")])
-
+    # [圖片名稱, 圖片類別, 圖片的二進位資料]
     return render_template("home.html", imgs=imgs)
 
 @app.route("/search")
@@ -46,10 +46,10 @@ def search():
         all_distance = distance(selected_img_idx, norm_features, methods[img_info["method"]])
     else:
         all_distance = distance(selected_img_idx, unnorm_features, methods[img_info["method"]])
-    similar_img_idx = searching(methods[img_info["method"]], all_distance)
+    similar_imgs_idx = searching(methods[img_info["method"]], all_distance)
     similar_imgs = []
     accuracy = 0.0
-    for img_idx in similar_img_idx:
+    for img_idx in similar_imgs_idx:
         with open(pic_path / files[img_idx][1] / files[img_idx][0], "rb") as file:
             similar_imgs.append([files[img_idx][0], b64encode(file.read()).decode("utf-8")])
         if files[img_idx][1] == img_info["img_class"]:
