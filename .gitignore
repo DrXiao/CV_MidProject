@@ -3,3 +3,6 @@ raw features.zip
 pic/
 raw features/
 tmp.txt
+*.cu
+main
+run.sh
