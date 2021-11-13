@@ -6,3 +6,4 @@ tmp.txt
 *.cu
 main
 run.sh
+src/__pycache__
