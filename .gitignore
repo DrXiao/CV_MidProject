@@ -3,3 +3,7 @@ raw features.zip
 pic/
 raw features/
 tmp.txt
+src/accuracy.py
+src/accuracy_class.txt
+src/accuracy_dist.txt
+src/accuracy_dist_v2.txt

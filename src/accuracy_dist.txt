@@ -1,0 +1,10 @@
+
+***unnormalize***
+Eudience distance: 25.085
+Cosine distance: 27.456
+PCC distance: 27.338
+
+***normalize***
+Eudience distance: 25.627
+Cosine distance: 27.456
+PCC distance: 27.338

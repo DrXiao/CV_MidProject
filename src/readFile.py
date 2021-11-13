@@ -5,9 +5,9 @@ import random
 filesize = 10000
 # 取得路徑
 path_norm = os.path.abspath(os.path.join(
-    os.getcwd(), os.path.pardir)) + "/MidProject/norm.txt"
+    os.getcwd(), os.path.pardir)) + "/norm.txt"
 path_unnorm = os.path.abspath(os.path.join(
-    os.getcwd(), os.path.pardir)) + "/MidProject/unnorm.txt"
+    os.getcwd(), os.path.pardir)) + "/unnorm.txt"
 
 #############################
 #  data_XX[][0]→檔案名稱     #
@@ -97,15 +97,15 @@ def main():
     # accuracy = finding(k*200 + rand_pic, flag_norm, caculate)
 
     '''下面是用來測準確率ㄉ！'''
-    f = open("accuracy.txt", "w")
+    f = open("accuracy_dist_v2.txt", "w")
     norm_data = readFeature(path_norm)
     unnorm_data = readFeature(path_unnorm)
-    data = [norm_data, unnorm_data]
+    data = [unnorm_data, norm_data]
     for k in range(2):      # 是否正規化
         if k:
             f.write("\n***normalize***\n")
         else:
-            f.write("\n ***unnormalize***\n")
+            f.write("\n***unnormalize***\n")
         for i in range(3):              # 不同公式
             accuracy = 0
             for j in range(filesize):      # 跑10000張圖片
