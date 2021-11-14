@@ -31,11 +31,12 @@ with open("unnorm.txt", "w") as file:
 
 with open("norm.txt", "w") as file:
     for img in all_imgs_features:
-        max_feature = max(all_imgs_features[img][1])
-        min_feature = min(all_imgs_features[img][1])
-        # print(max_feature, min_feature)
         print("%s %s"%(img, all_imgs_features[img][0]), end='', file=file)
-        for feature in all_imgs_features[img][1]:
-            feature = (feature - min_feature) / (max_feature - min_feature)
-            print(" %f"%(feature), end='', file=file)
+        for all_range in [[0, 32], [32, 44], [44, 80], [80, 142], [142, 222]]:
+            max_feature = max(all_imgs_features[img][1][all_range[0]:all_range[1]])
+            min_feature = min(all_imgs_features[img][1][all_range[0]:all_range[1]])
+            for feature in all_imgs_features[img][1][all_range[0]:all_range[1]]:
+                if max_feature != 0:
+                    feature /= max_feature
+                print(" %f"%(feature), end='', file=file)
         print(file=file)
