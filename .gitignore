@@ -7,3 +7,7 @@ tmp.txt
 main
 run.sh
 src/__pycache__
+src/accuracy.py
+src/accuracy_class.txt
+src/accuracy_dist.txt
+src/accuracy_dist_v2.txt
