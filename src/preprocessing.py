@@ -37,5 +37,5 @@ with open("norm.txt", "w") as file:
         print("%s %s"%(img, all_imgs_features[img][0]), end='', file=file)
         for feature in all_imgs_features[img][1]:
             feature = (feature - min_feature) / (max_feature - min_feature)
-            print(" %.32f"%(feature), end='', file=file)
+            print(" %f"%(feature), end='', file=file)
         print(file=file)
