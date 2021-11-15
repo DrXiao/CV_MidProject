@@ -8,28 +8,27 @@
     <title> home </title>
 </head>
 
-<body>
+<body style="background-color:rgb(170, 253, 253)">
     <nav class="navbar navbar-dark bg-dark" style="padding: 0.5rem 1rem; background-color: #343a40 !important;">
-        <a class="navbar-brank" href="/" style="color: #fff; text-decoration:none;;">
-                &nbsp <strong style="font-size: larger;">CV Midterm Project</strong>
+        <a class="navbar-brank" href="/" style="color: #fff; text-decoration:none;">
+                &nbsp <strong style="font-size: larger;">第 6 組 - CV Midterm Project</strong>
             </a>
     </nav>
 
     <!-- 中間區塊 -->
-    <div class="container" style=" padding: 20px 20px 20px;">
+    <div class="container" style="padding: 20px 20px 20px;text-align:center;">
         <h1 style="margin-top: 1rem;"><strong>影像搜尋</strong></h1>
         <div style=" margin-top: 1rem;">
             <!-- card1 -->
             {% for class_idx in range(50) %}
             <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
                 <div class="card-body">
-                    <h5 class="card-title"># {{ class_idx + 1}}</h5>
+                    <h5 class="card-title">{{ imgs[class_idx][1]}}</h5>
                     <img src="data:;base64,{{ imgs[class_idx][2] }}" class="card-img-top" width="100" height="150">
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <div>
-                            <span>是否正規化?</span>
                             <div class="text-truncate" style="color: #343a40;">
                                 <label for="r1">
                                     <input type="radio" id="r1" name="norm" form="{{imgs[class_idx][1]}}" value="Normalize" checked/> Normalize
@@ -43,7 +42,6 @@
                     </li>
                     <li class="list-group-item">
                         <div>
-                            <span>選擇算法：</span>
                             <div class="text-truncate">
                                 <select id="timeschooser" form="{{imgs[class_idx][1]}}" name="method">
                                         <option>Euclidean Distance</option>

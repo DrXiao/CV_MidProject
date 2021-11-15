@@ -54,6 +54,7 @@ def search():
             similar_imgs.append([files[img_idx][0], b64encode(file.read()).decode("utf-8")])
         if files[img_idx][1] == img_info["img_class"]:
             accuracy += 1
+    accuracy -= 1
     selected_img = None
     with open(pic_path / files[selected_img_idx][1] / files[selected_img_idx][0], "rb") as file:
         selected_img = [files[selected_img_idx][0], b64encode(file.read()).decode("utf-8")]

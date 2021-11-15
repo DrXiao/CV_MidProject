@@ -8,15 +8,15 @@
     <title> imgSearch </title>
 </head>
 
-<body>
+<body style="background-color:rgb(170, 253, 253)">
     <nav class="navbar navbar-dark bg-dark" style="padding: 0.5rem 1rem; background-color: #343a40 !important;">
         <a class="navbar-brank" href="/" style="color: #fff; text-decoration:none;;">
-                &nbsp <strong style="font-size: larger;">CV Midterm Project</strong>
+                &nbsp <strong style="font-size: larger;">第 6 組 - CV Midterm Project</strong>
             </a>
     </nav>
 
     <!-- 中間區塊 -->
-    <div class="container" style=" padding: 20px 20px 10px;">
+    <div class="container" style=" padding: 20px 20px 10px;text-align:center;">
         <h1 style="margin-top: 1rem;"><strong>影像搜尋</strong></h1>
         <div style=" margin-top: 1rem;">
             <!-- 選擇的card -->
@@ -30,7 +30,7 @@
             <div style=" margin-top: 2rem;">
                 <h2><strong>搜尋結果</strong></h2>
                 <!-- card1 -->
-                {% for img_idx in range(10) %}
+                {% for img_idx in range(11) %}
                 <div class="card" style="width: 13rem; display: inline-block; margin: 0.2rem;">
                     <div class="card-body">
                         <h5 class="card-title"># {{img_idx + 1}}</h5>

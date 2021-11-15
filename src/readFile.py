@@ -31,12 +31,14 @@ def distance(num, data, c):
     d = []
 
     for i in range(filesize):
+        """
         if i == num:
             if c == 0:
                 d.append(1E9)
             else:
                 d.append(0)
             continue
+        """
         if c == 0:  # 尤拉 公式
             d.append(euclidean_distance(
                 data[num][2], data[i][2]))
@@ -52,7 +54,7 @@ def distance(num, data, c):
 
 def searching(caculate, value):
     idx = []
-    for i in range(10):
+    for i in range(11):
         g = 0
         if caculate == 0:
             tmp = min(value)
